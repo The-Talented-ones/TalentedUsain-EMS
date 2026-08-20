@@ -23,18 +23,18 @@ export const dummyEmployeeDashboardData = {
         netSalary: 2000,
     },
     employee: {
-        firstName: "John",
-        lastName: "Doe",
+        firstName: "Oloyede",
+        lastName: "Ameer",
         position: "Software Engineer",
-        department: "Engineering",
+        department: "Information Technology",
     },
 };
 
 export const dummyProfileData = {
     _id: "69b411e6f8a807df391d7b13",
-    firstName: "John",
-    lastName: "Doe",
-    email: "johndoe@example.com",
+    firstName: "Oloyede",
+    lastName: "Ameer",
+    email: "oloyedeameer2k1@gmail.com",
     image: null,
 };
 
