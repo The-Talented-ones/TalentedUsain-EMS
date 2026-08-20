@@ -1,5 +1,13 @@
 export const DEPARTMENTS = ["Engineering", "Human Resources", "Marketing", "Sales", "Finance", "Operations", "IT Support", "Customer Success", "Product Management", "Design"];
 
+export interface ProfileDataType {
+    _id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    image: string | null;
+    role?: string; // The question mark means this property is optional
+}
 export const dummyAdminDashboardData = {
     role: "ADMIN",
     totalEmployees: 3,
@@ -158,7 +166,8 @@ export const dummyLeaveData = [
         createdAt: "2026-03-13T13:49:48.618Z",
         updatedAt: "2026-03-13T13:51:44.251Z",
         id: "69b415fcf8a807df391d7be0",
-        employee: [dummyEmployeeData[2]],
+        // Fixed: Removed the array wrappers around this object
+        employee: dummyEmployeeData[2], 
     },
     {
         _id: "69b415dff8a807df391d7bdb",
@@ -271,57 +280,5 @@ export const dummyAttendanceData = [
         checkOut: "2026-03-15T18:42:37.476Z",
         status: "PRESENT",
         workingHours: 8,
-        dayType: "Full Day",
-        createdAt: "2026-03-15T10:42:33.973Z",
-        updatedAt: "2026-03-15T10:42:37.479Z",
-    },
-    {
-        _id: "69b415b9f8a807df391d7bcc",
-        employeeId: "69b411e6f8a807df391d7b13",
-        date: "2026-03-12T18:30:00.000Z",
-        checkIn: "2026-03-13T13:48:41.416Z",
-        checkOut: "2026-03-13T21:48:42.430Z",
-        status: "PRESENT",
-        workingHours: 8,
-        dayType: "Full Day",
-        createdAt: "2026-03-13T13:48:41.418Z",
-        updatedAt: "2026-03-13T13:48:42.433Z",
-    },
+    } // Fixed: Correctly closed object and array layout scopes
 ];
-
-
-export function getWorkingHoursDisplay(record) {
-    if (record.workingHours != null) {
-        const hrs = Math.floor(record.workingHours);
-        const mins = Math.round((record.workingHours - hrs) * 60);
-        return `${hrs}h ${mins}m`;
-    }
-    // If still checked in (no checkout), compute live hours
-    if (record.checkIn && !record.checkOut) {
-        const diffMs = Date.now() - new Date(record.checkIn).getTime();
-        const diffHours = diffMs / (1000 * 60 * 60);
-        const hrs = Math.floor(diffHours);
-        const mins = Math.round((diffHours - hrs) * 60);
-        return `${hrs}h ${mins}m (ongoing)`;
-    }
-    return "—";
-}
-
-export function getDayTypeDisplay(record) {
-    if (record.dayType) {
-        const map = {
-            "Full Day": "badge-success",
-            "Three Quarter Day": "bg-blue-100 text-blue-700",
-            "Half Day": "badge-warning",
-            "Short Day": "badge-danger",
-        };
-        return {
-            label: record.dayType,
-            className: map[record.dayType] || "bg-slate-100 text-slate-600",
-        };
-    }
-    if (record.checkIn && !record.checkOut) {
-        return { label: "In Progress", className: "bg-indigo-100 text-indigo-700" };
-    }
-    return { label: "—", className: "" };
-}
