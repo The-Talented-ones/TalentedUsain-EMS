@@ -1,4 +1,15 @@
-export const DEPARTMENTS = ["Engineering", "Human Resources", "Marketing", "Sales", "Finance", "Operations", "IT Support", "Customer Success", "Product Management", "Design"];
+export const DEPARTMENTS = [
+    "Engineering",
+    "Human Resources",
+    "Marketing",
+    "Sales",
+    "Finance",
+    "Operations",
+    "IT Support",
+    "Customer Success",
+    "Product Management",
+    "Design"
+];
 
 export interface ProfileDataType {
     _id: string;
@@ -6,9 +17,38 @@ export interface ProfileDataType {
     lastName: string;
     email: string;
     image: string | null;
-    role?: string; // The question mark means this property is optional
+    role?: string;
 }
-export const dummyAdminDashboardData = {
+
+export interface EmployeeType {
+    _id: string;
+    userId: {
+        _id: string;
+        email: string;
+        role: string;
+    };
+    department: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    position: string;
+    basicSalary: number;
+    allowances: number;
+    deductions: number;
+    employmentStatus: string;
+    joinDate: string;
+    image: string | null;
+    isDeleted: boolean;
+    bio: string;
+    createdAt: string;
+    updatedAt: string;
+    id: string;
+    user: {
+        email: string;
+        role: string;
+    };
+}export const dummyAdminDashboardData = {
     role: "ADMIN",
     totalEmployees: 3,
     totalDepartments: 10,
@@ -38,20 +78,20 @@ export const dummyProfileData = {
     image: null,
 };
 
-export const dummyEmployeeData = [
-    {
+export const dummyAdminEmployeeData = [
+     {
         _id: "69b414a7f8a807df391d7b58",
         userId: {
             _id: "69b414a7f8a807df391d7b56",
-            email: "david@example.com",
+            email: "oloyedeameer@example.com",
             role: "EMPLOYEE",
         },
-        department: "IT Support",
-        firstName: "David",
-        lastName: "Michael",
-        email: "david@example.com",
+        department: "Engineering",
+        firstName: "Oloyede",
+        lastName: "Ameer",
+        email: "oloyedeameer2k1@example.com",
         phone: "9000000001",
-        position: "Associate Business Support",
+        position: "Senior SoftWare Engineer",
         basicSalary: 1000,
         allowances: 100,
         deductions: 9.98,
@@ -62,9 +102,9 @@ export const dummyEmployeeData = [
         bio: "",
         createdAt: "2026-03-13T13:44:07.806Z",
         updatedAt: "2026-03-13T13:44:07.806Z",
-        id: "69b414a7f8a807df391d7b58",
+        id: "001",
         user: {
-            email: "david@example.com",
+            email: "oloyedeameer@example.com",
             role: "EMPLOYEE",
         },
     },
@@ -105,9 +145,9 @@ export const dummyEmployeeData = [
             role: "EMPLOYEE",
         },
         department: "Engineering",
-        firstName: "John",
+        firstName: "TalentedUsain",
         lastName: "Doe",
-        email: "johndoe@example.com",
+        email: "talentedusain@example.com",
         phone: "9000000001",
         position: "Senior Software Developer",
         basicSalary: 40000,
@@ -122,7 +162,126 @@ export const dummyEmployeeData = [
         updatedAt: "2026-03-13T13:33:20.498Z",
         id: "69b411e6f8a807df391d7b13",
         user: {
-            email: "johndoe@example.com",
+            email: "talentedusain@example.com",
+            role: "EMPLOYEE",
+        },
+    },
+];
+
+export const dummyEmployeeData = [
+    {
+        _id: "emp-001",
+        userId: {
+            _id: "emp-001",
+            email: "oloyedeameer@example.com",
+            role: "EMPLOYEE",
+        },
+        department: "Engineering",
+        firstName: "Oloyede",
+        lastName: "Ameer",
+        email: "oloyedeameer2k1@example.com",
+        phone: "9000000001",
+        position: "Senior SoftWare Engineer",
+        basicSalary: 1000,
+        allowances: 100,
+        deductions: 9.98,
+        employmentStatus: "ACTIVE",
+        joinDate: "2000-01-20T00:00:00.000Z",
+        image: null,
+        isDeleted: false,
+        bio: "",
+        createdAt: "2026-03-13T13:44:07.806Z",
+        updatedAt: "2026-03-13T13:44:07.806Z",
+        id: "001",
+        user: {
+            email: "oloyedeameer@example.com",
+            role: "EMPLOYEE",
+        },
+    },
+    {
+        _id: "emp-002",
+        userId: {
+            _id: "emp-002",
+            email: "alex@example.com",
+            role: "EMPLOYEE",
+        },
+        department: "Engineering",
+        firstName: "Alex",
+        lastName: "Matthew",
+        email: "alex@example.com",
+        phone: "9000000001",
+        position: "Software Developer",
+        basicSalary: 2000,
+        allowances: 100,
+        deductions: 20,
+        employmentStatus: "ACTIVE",
+        joinDate: "2000-01-20T00:00:00.000Z",
+        image: null,
+        isDeleted: false,
+        bio: "",
+        createdAt: "2026-03-13T13:42:17.589Z",
+        updatedAt: "2026-03-13T13:42:17.589Z",
+        id: "69b41439f8a807df391d7b52",
+        user: {
+            email: "alex@example.com",
+            role: "EMPLOYEE",
+        },
+    },
+    {
+        _id: "emp-003",
+        userId: {
+            _id: "emp-003",
+            email: "talentedusain@example.com",
+            role: "EMPLOYEE",
+        },
+        department: "Engineering",
+        firstName: "TalentedUsain",
+        lastName: "Doe",
+        email: "talentedusain@example.com",
+        phone: "9000000001",
+        position: "Senior Software Developer",
+        basicSalary: 40000,
+        allowances: 10000,
+        deductions: 2000,
+        employmentStatus: "ACTIVE",
+        joinDate: "2000-01-20T00:00:00.000Z",
+        image: null,
+        isDeleted: false,
+        bio: "Hi, I am dev a full stack web developer",
+        createdAt: "2026-03-13T13:32:22.013Z",
+        updatedAt: "2026-03-13T13:33:20.498Z",
+        id: "69b411e6f8a807df391d7b13",
+        user: {
+            email: "talentedusain@example.com",
+            role: "EMPLOYEE",
+        },
+    },
+    {
+        _id: "emp-004",
+        userId: {
+            _id: "emp-004",
+            email: "alex@example.com",
+            role: "EMPLOYEE",
+        },
+        department: "Engineering",
+        firstName: "Alex",
+        lastName: "Matthew",
+        email: "alex@example.com",
+        phone: "9000000001",
+        position: "Software Developer",
+        basicSalary: 2000,
+        allowances: 100,
+        deductions: 20,
+        employmentStatus: "ACTIVE",
+        joinDate: "2000-01-20T00:00:00.000Z",
+        image: null,
+        isDeleted: false,
+        bio: "",
+        createdAt: "2026-03-13T13:42:17.589Z",
+        updatedAt: "2026-03-13T13:42:17.589Z",
+        id: "69b41439f8a807df391d7b52",
+        user: {
+            email: "alex@example.com",
             role: "EMPLOYEE",
         },
     },
@@ -130,8 +289,8 @@ export const dummyEmployeeData = [
 
 export const dummyLeaveData = [
     {
-        _id: "69b4165af8a807df391d7bfd",
-        employeeId: "69b41439f8a807df391d7b52",
+        _id: "emp-001",
+        employeeId: "emp-001",
         type: "ANNUAL",
         startDate: "2026-03-27T00:00:00.000Z",
         endDate: "2026-03-29T00:00:00.000Z",
@@ -143,8 +302,8 @@ export const dummyLeaveData = [
         employee: dummyEmployeeData[0],
     },
     {
-        _id: "69b4163cf8a807df391d7bf8",
-        employeeId: "69b41439f8a807df391d7b52",
+        _id: "emp-002",
+        employeeId: "emp-002",
         type: "CASUAL",
         startDate: "2026-03-23T00:00:00.000Z",
         endDate: "2026-03-24T00:00:00.000Z",
@@ -156,8 +315,8 @@ export const dummyLeaveData = [
         employee: dummyEmployeeData[1],
     },
     {
-        _id: "69b415fcf8a807df391d7be0",
-        employeeId: "69b411e6f8a807df391d7b13",
+        _id: "emp-003",
+        employeeId: "emp-003",
         type: "CASUAL",
         startDate: "2026-03-27T00:00:00.000Z",
         endDate: "2026-03-28T00:00:00.000Z",
@@ -170,8 +329,8 @@ export const dummyLeaveData = [
         employee: dummyEmployeeData[2], 
     },
     {
-        _id: "69b415dff8a807df391d7bdb",
-        employeeId: "69b411e6f8a807df391d7b13",
+        _id: "emp-004",
+        employeeId: "emp-004",
         type: "SICK",
         startDate: "2026-03-15T00:00:00.000Z",
         endDate: "2026-03-16T00:00:00.000Z",
@@ -271,7 +430,7 @@ export const dummyPayslipData = [
     },
 ];
 
-export const dummyAttendanceData = [
+export const dummyEmployeeAttendanceData = [
     {
         _id: "69b68d19f4437fdd254d5a68",
         employeeId: "69b411e6f8a807df391d7b13",
@@ -281,4 +440,45 @@ export const dummyAttendanceData = [
         status: "PRESENT",
         workingHours: 8,
     } // Fixed: Correctly closed object and array layout scopes
+];
+
+export const dummyAdminAttendanceData = [
+    // ============================================================
+    // MARCH 13, 2026
+    // ============================================================
+
+    {
+        _id: "emp-001",
+        employeeId: "emp-001",
+        date: "2026-03-13T00:00:00.000Z",
+        checkIn: "2026-03-13T08:05:00.000Z",
+        checkOut: "2026-03-13T17:10:00.000Z",
+        status: "PRESENT",
+        workingHours: 9,
+        employee: dummyEmployeeData[0],
+    },
+
+    {
+        _id: "emp-002",
+        employeeId: "emp-002",
+        date: "2026-03-13T00:00:00.000Z",
+        checkIn: "2026-03-13T08:21:00.000Z",
+        checkOut: "2026-03-13T17:00:00.000Z",
+        status: "LATE",
+        workingHours: 8.65,
+        employee: dummyEmployeeData[1],
+    },
+
+    {
+        _id: "emp-003",
+        employeeId: "emp-003",
+        date: "2026-03-13T00:00:00.000Z",
+        checkIn: "2026-03-13T07:55:00.000Z",
+        checkOut: "2026-03-13T17:05:00.000Z",
+        status: "PRESENT",
+        workingHours: 9.17,
+        employee: dummyEmployeeData[2],
+    },
+
+
 ];
