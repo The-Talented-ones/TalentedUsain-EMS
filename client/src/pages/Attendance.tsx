@@ -1,7 +1,7 @@
-import AdminAttendance from "../component/AdminAttendance";
+import EmployeeAttendance from "../component/EmployeeAttendance";
 
 const Attendance = () => {
-  return <AdminAttendance />;
+  return <EmployeeAttendance />;
 };
 
 export default Attendance;

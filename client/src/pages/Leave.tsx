@@ -10,7 +10,7 @@ const Leave = () => {
   useEffect(() => {
     // Temporary role for testing
     // Change to "ADMIN" to test the Admin Leave page
-    setRole("ADMIN");
+    setRole("EMPLOYEE");
 
     const timer = setTimeout(() => {
       setLoading(false);

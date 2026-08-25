@@ -21,6 +21,7 @@ export interface ProfileDataType {
 }
 
 export interface EmployeeType {
+    
     _id: string;
     userId: {
         _id: string;
@@ -481,4 +482,181 @@ export const dummyAdminAttendanceData = [
     },
 
 
+];
+
+export const dummyEmployeePayslipData = [
+  {
+    _id: "payslip-001",
+    employeeId: "emp-003",
+    month: 1,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-01-31T00:00:00.000Z",
+    createdAt: "2026-01-31T10:00:00.000Z",
+    updatedAt: "2026-01-31T10:00:00.000Z",
+    id: "payslip-001",
+  },
+
+  {
+    _id: "payslip-002",
+    employeeId: "emp-003",
+    month: 2,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-02-28T00:00:00.000Z",
+    createdAt: "2026-02-28T10:00:00.000Z",
+    updatedAt: "2026-02-28T10:00:00.000Z",
+    id: "payslip-002",
+  },
+
+  {
+    _id: "payslip-003",
+    employeeId: "emp-003",
+    month: 3,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-03-31T00:00:00.000Z",
+    createdAt: "2026-03-31T10:00:00.000Z",
+    updatedAt: "2026-03-31T10:00:00.000Z",
+    id: "payslip-003",
+  },
+
+  {
+    _id: "payslip-004",
+    employeeId: "emp-003",
+    month: 4,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-04-30T00:00:00.000Z",
+    createdAt: "2026-04-30T10:00:00.000Z",
+    updatedAt: "2026-04-30T10:00:00.000Z",
+    id: "payslip-004",
+  },
+
+  {
+    _id: "payslip-005",
+    employeeId: "emp-003",
+    month: 5,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-05-31T00:00:00.000Z",
+    createdAt: "2026-05-31T10:00:00.000Z",
+    updatedAt: "2026-05-31T10:00:00.000Z",
+    id: "payslip-005",
+  },
+
+  {
+    _id: "payslip-006",
+    employeeId: "emp-003",
+    month: 6,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-06-30T00:00:00.000Z",
+    createdAt: "2026-06-30T10:00:00.000Z",
+    updatedAt: "2026-06-30T10:00:00.000Z",
+    id: "payslip-006",
+  },
+
+  {
+    _id: "payslip-007",
+    employeeId: "emp-003",
+    month: 7,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-07-31T00:00:00.000Z",
+    createdAt: "2026-07-31T10:00:00.000Z",
+    updatedAt: "2026-07-31T10:00:00.000Z",
+    id: "payslip-007",
+  },
+
+  {
+    _id: "payslip-008",
+    employeeId: "emp-003",
+    month: 8,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-08-31T00:00:00.000Z",
+    createdAt: "2026-08-31T10:00:00.000Z",
+    updatedAt: "2026-08-31T10:00:00.000Z",
+    id: "payslip-008",
+  },
+];
+
+export const dummyAdminPayslipData = [
+  {
+    _id: "pay-001-jan",
+    employeeId: "emp-001",
+    month: 1,
+    year: 2026,
+    basicSalary: 1000,
+    allowances: 100,
+    deductions: 9.98,
+    netSalary: 1090.02,
+    status: "PAID",
+    paymentDate: "2026-01-31T00:00:00.000Z",
+    id: "pay-001-jan-2026",
+    employee: dummyEmployeeData[0],
+  },
+
+  {
+    _id: "pay-002-jan",
+    employeeId: "emp-002",
+    month: 1,
+    year: 2026,
+    basicSalary: 2000,
+    allowances: 100,
+    deductions: 20,
+    netSalary: 2080,
+    status: "PAID",
+    paymentDate: "2026-01-31T00:00:00.000Z",
+    id: "pay-002-jan-2026",
+    employee: dummyEmployeeData[1],
+  },
+
+  {
+    _id: "pay-003-jan",
+    employeeId: "emp-003",
+    month: 1,
+    year: 2026,
+    basicSalary: 40000,
+    allowances: 10000,
+    deductions: 2000,
+    netSalary: 48000,
+    status: "PAID",
+    paymentDate: "2026-01-31T00:00:00.000Z",
+    id: "pay-003-jan-2026",
+    employee: dummyEmployeeData[2],
+  },
 ];
