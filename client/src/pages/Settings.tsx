@@ -1,9 +1,15 @@
-
+import EmployeeSettings from "../component/EmployeeSettings";
+import AdminSettings from "../component/AdminSettings";
 
 const Settings = () => {
-  return (
-    <div>Settings</div>
-  )
-}
+  // Replace this with your actual authenticated user
+  const userRole = "EMPLOYEE"; // Change to "EMPLOYEE" to test employee view
 
-export default Settings
+  if (userRole === "EMPLOYEE") {
+    return <EmployeeSettings />;
+  }
+
+  return <AdminSettings />;
+};
+
+export default Settings;

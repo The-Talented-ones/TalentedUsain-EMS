@@ -487,7 +487,7 @@ export const dummyAdminAttendanceData = [
 export const dummyEmployeePayslipData = [
   {
     _id: "payslip-001",
-    employeeId: "emp-003",
+    employeeId: "emp-001",
     month: 1,
     year: 2026,
     basicSalary: 40000,
@@ -503,7 +503,7 @@ export const dummyEmployeePayslipData = [
 
   {
     _id: "payslip-002",
-    employeeId: "emp-003",
+    employeeId: "emp-002",
     month: 2,
     year: 2026,
     basicSalary: 40000,
